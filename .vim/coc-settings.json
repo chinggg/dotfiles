@@ -1,0 +1,4 @@
+{
+   "semanticTokens.filetypes": ["c", "cpp"],
+   "rust-analyzer.server.path": "/usr/bin/rust-analyzer"
+}
