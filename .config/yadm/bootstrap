@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# yadm bootstrap — called by `yadm bootstrap` after cloning
+set -euo pipefail
+
+DOTFILES="$(yadm rev-parse --show-toplevel 2>/dev/null || echo "$HOME")"
+
+echo "==> Running yadm bootstrap from $DOTFILES"
+
+# Run main bootstrap (installs tools, symlinks)
+bash "$HOME/bootstrap.sh" 2>/dev/null || bash "$DOTFILES/bootstrap.sh"

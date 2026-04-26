@@ -1,0 +1,45 @@
+# oh-my-tmux local overrides
+# See: https://github.com/gpakosz/.tmux#enabling-the-powerline-look
+
+# ─── Terminal ─────────────────────────────────────────────────────────────────
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*256col*:Tc"       # true color
+set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'  # cursor shape
+
+# ─── Basics ──────────────────────────────────────────────────────────────────
+set -g mouse on
+set -g history-limit 50000
+set -g base-index 1           # windows start at 1
+setw -g pane-base-index 1
+set -g renumber-windows on
+
+# ─── Status bar: plain ASCII (no Powerline glyphs) ───────────────────────────
+tmux_conf_theme_left_separator_main=''
+tmux_conf_theme_left_separator_sub='|'
+tmux_conf_theme_right_separator_main=''
+tmux_conf_theme_right_separator_sub='|'
+
+# ─── Status content ──────────────────────────────────────────────────────────
+tmux_conf_theme_status_left=' ❐ #S '
+tmux_conf_theme_status_right='#{prefix}#{mouse}#{pairing}#{synchronized} %R , %d %b | #{username}#{root} | #{hostname} '
+
+# ─── Copy mode ───────────────────────────────────────────────────────────────
+tmux_conf_copy_to_os_clipboard=true
+
+# ─── Extra key bindings ───────────────────────────────────────────────────────
+# Split with | and -
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
+
+# Vim-like pane navigation
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Resize panes
+bind -r H resize-pane -L 2
+bind -r J resize-pane -D 2
+bind -r K resize-pane -U 2
+bind -r L resize-pane -R 2
