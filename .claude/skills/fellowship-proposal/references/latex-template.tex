@@ -1,0 +1,81 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{cite}
+\usepackage{booktabs}
+
+% ── Color palette ────────────────────────────────────────────────────────────
+\definecolor{myblue}{RGB}{0,70,180}
+\definecolor{myred}{RGB}{190,30,30}
+
+% ── Spacing ──────────────────────────────────────────────────────────────────
+\setlength{\parskip}{3.5pt plus 1pt}
+\setlength{\parindent}{0pt}
+
+\pagestyle{plain}
+
+% ── Convenience commands ─────────────────────────────────────────────────────
+\newcommand{\thread}[1]{\vspace{4pt}\noindent{\normalsize\bfseries\color{myblue}#1}\quad}
+\newcommand{\subthread}[1]{\vspace{2pt}\noindent\textbf{\textit{#1}}\enspace}
+
+% =============================================================================
+\begin{document}
+% =============================================================================
+
+\begin{center}
+{\large\bfseries
+  TITLE\\
+  SUBTITLE}\\[5pt]
+{\normalsize FELLOWSHIP \,---\, Research Proposal}\\[3pt]
+{\normalsize AUTHOR \quad INSTITUTION}\\[1pt]
+{\small Research Area: AREA}
+\end{center}
+
+\smallskip
+
+% ── VISION STATEMENT ────────────────────────────────────────────────────────
+\thread{Dissertation Vision.}
+% [Bold opening: why this research matters, what gap you address, one cohesive idea]
+
+\smallskip
+
+% ── PRIOR WORK ──────────────────────────────────────────────────────────────
+\thread{Prior Work.}
+% [Your published work as narrative evidence building toward the vision]
+
+\smallskip
+
+% ── PROPOSED WORK ───────────────────────────────────────────────────────────
+\thread{Proposed Work.}
+% [2-3 concrete research thrusts with preliminary results and feasibility]
+
+\subthread{Thrust 1.}
+% [Description]
+
+\subthread{Thrust 2.}
+% [Description]
+
+\smallskip
+
+% ── FUTURE DIRECTIONS ───────────────────────────────────────────────────────
+\thread{Future Directions.}
+% [Speculative extensions grounded in prior work]
+
+\smallskip
+
+% ── IMPACT & ALIGNMENT ─────────────────────────────────────────────────────
+\thread{Impact and Alignment.}
+% [Why this funder should care, real-world impact in plain terms]
+
+\smallskip
+
+\bibliographystyle{plain}
+\bibliography{proposal}
+
+\end{document}

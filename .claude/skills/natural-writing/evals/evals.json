@@ -1,0 +1,23 @@
+{
+  "skill_name": "natural-writing",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Write an email to my team announcing we're switching from Jenkins to GitHub Actions for CI/CD",
+      "expected_output": "A natural-sounding team email about CI/CD migration",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Write the opening paragraph for a blog post about why most startups should use Postgres instead of MongoDB",
+      "expected_output": "A compelling, human-sounding blog intro with a clear opinion",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Explain to a junior developer why we use dependency injection",
+      "expected_output": "A clear, conversational explanation without AI buzzwords",
+      "files": []
+    }
+  ]
+}
